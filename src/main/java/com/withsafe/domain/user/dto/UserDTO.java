@@ -1,5 +1,6 @@
 package com.withsafe.domain.user.dto;
 
+import com.withsafe.domain.department.domain.Department;
 import com.withsafe.domain.user.domain.Sex;
 import com.withsafe.domain.user.domain.User;
 import lombok.Builder;
@@ -14,7 +15,6 @@ public class UserDTO {
     @NoArgsConstructor
     public static class SaveRequest {
         private Long id;
-
         private String name;    //이름
         private int age;    //나이
         private String phone_num;   //전화번호
@@ -27,6 +27,7 @@ public class UserDTO {
         private double weight;  //몸무게
         @Enumerated(value = EnumType.STRING)
         private Sex sex;    //성별
+        private Department department;
 
         @Builder
         public SaveRequest(String name, int age, String phone_num, String emergency_contact, String emergency_relation, int heartRate_threshold, int oxygen_threshold, int walk_threshold, double height, double weight, Sex sex) {

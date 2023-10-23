@@ -1,5 +1,7 @@
 package com.withsafe.domain.user.application;
 
+import com.withsafe.domain.department.application.DepartmentService;
+import com.withsafe.domain.department.dao.DepartmentRepository;
 import com.withsafe.domain.department.domain.Department;
 import com.withsafe.domain.user.dao.UserRepository;
 import com.withsafe.domain.user.domain.Sex;
@@ -21,9 +23,17 @@ public class UserServiceTest {
     @Autowired
     UserService userService;
 
+    @Autowired
+    DepartmentRepository departmentRepository;
+    @Autowired
+    DepartmentService departmentService;
+
+
     @Test
     public void 유저생성() {
         Department testDepartment = new Department("A");
+        departmentService.saveDepartment(testDepartment.toSaveDepartmentDTO());
+
         User user  = new User("이윤서",24, "010-0000-00000","010-0000-00000","none",50,60, 100, 176.00, 68.00, Sex.Male,testDepartment);
         userService.saveUser(user.toUserSaveRequestDTO());
     }
@@ -32,7 +42,7 @@ public class UserServiceTest {
     public void 유저조회() {
         Department testDepartment1 = new Department("A");
         Department testDepartment2 = new Department("B");
-        User user1  = new User("이윤서",24, "010-0000-00000","010-0000-00000","none",50,60, 100, 176.00, 68.00, Sex.Male,testDepartment1);
+        User user1  = new User("이윤서",24, "010-0000-0000","010-0000-00000","none",50,60, 100, 176.00, 68.00, Sex.Male,testDepartment1);
         userService.saveUser(user1.toUserSaveRequestDTO());
 
         User user2  = new User("이윤서",24, "010-1111-2222","010-0000-00000","none",50,60, 100, 176.00, 68.00, Sex.Male,testDepartment2);
@@ -43,7 +53,7 @@ public class UserServiceTest {
 
         List<User> userFoundList = userService.findUser("이윤서");
         for (User user : userFoundList) {
-            System.out.println("============전화 번호: "+ user.getPhone_num());
+            System.out.println("============전화번호: "+ user.getPhoneNum());
         }
     }
 }

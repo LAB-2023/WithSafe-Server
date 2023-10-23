@@ -5,12 +5,10 @@ import com.withsafe.domain.indoorMap.domain.IndoorMap;
 import com.withsafe.domain.indoorMap.dto.IndoorMapDto;
 import com.withsafe.domain.restrictArea.domain.RestrictArea;
 import com.withsafe.domain.uwb.IndoorUserLocation;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.geom.Point;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +79,7 @@ public class IndoorMapService {
 
         for (IndoorUserLocation location : indoorUserLocationList) {
             String name = location.getUwbTag().getUser().getName();
-            String phone_num = location.getUwbTag().getUser().getPhone_num();
+            String phone_num = location.getUwbTag().getUser().getPhoneNum();
             Point coordinate = location.getCoordinate();
             LocalDateTime time = location.getCreatedDate();
 
