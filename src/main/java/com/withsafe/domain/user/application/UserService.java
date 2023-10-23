@@ -28,15 +28,16 @@ public class UserService {
     public Long saveUser(SaveRequest saveRequest) {
 
         //전화번호 중복 예외처리
-        if (userRepository.existsByPhoneNum(saveRequest.getPhone_num())) {
+
+        if (userRepository.existsByPhoneNum(saveRequest.getPhoneNum())) {
             throw new PhoneNumberDuplicateException("해당 전화번호로 등록된 사용자가 존재합니다.");
         }
 
 //        유저를 등록하며 부서에 배정
-        if (saveRequest.getDepartment() != null) {
-            Department department = saveRequest.getDepartment();
-                department.getUserList().add(saveRequest.toEntity());
-        }
+//        if (saveRequest.getDepartment() != null) {
+//            Department department = saveRequest.getDepartment();
+//                department.getUserList().add(saveRequest.toEntity());
+//        }
 
         User user = saveRequest.toEntity();
         userRepository.save(user);

@@ -17,7 +17,7 @@ public class UserDTO {
         private Long id;
         private String name;    //이름
         private int age;    //나이
-        private String phone_num;   //전화번호
+        private String phoneNum;   //전화번호
         private String emergency_contact;   //비상연락망
         private String emergency_relation;  //비상연락망 대상과의 관계
         private int heartRate_threshold;    //심박수 임계치
@@ -30,10 +30,10 @@ public class UserDTO {
         private Department department;
 
         @Builder
-        public SaveRequest(String name, int age, String phone_num, String emergency_contact, String emergency_relation, int heartRate_threshold, int oxygen_threshold, int walk_threshold, double height, double weight, Sex sex) {
+        public SaveRequest(String name, int age, String phoneNum, String emergency_contact, String emergency_relation, int heartRate_threshold, int oxygen_threshold, int walk_threshold, double height, double weight, Sex sex) {
             this.name = name;
             this.age = age;
-            this.phone_num = phone_num;
+            this.phoneNum = phoneNum;
             this.emergency_contact = emergency_contact;
             this.emergency_relation = emergency_relation;
             this.heartRate_threshold = heartRate_threshold;
@@ -48,7 +48,7 @@ public class UserDTO {
             return User.builder()
                     .name(this.name)
                     .age(this.age)
-                    .phone_num(this.phone_num)
+                    .phoneNum(this.phoneNum)
                     .emergency_contact(this.emergency_contact)
                     .emergency_relation(this.emergency_relation)
                     .heartRate_threshold(this.heartRate_threshold)
@@ -66,7 +66,7 @@ public class UserDTO {
         private Long id;
         private String name;    //이름
         private int age;    //나이
-        private String phone_num;   //전화번호
+        private String phoneNum;   //전화번호
         private String emergency_contact;   //비상연락망
         private String emergency_relation;  //비상연락망 대상과의 관계
         private int heartRate_threshold;    //심박수 임계치
@@ -78,10 +78,10 @@ public class UserDTO {
         private Sex sex;    //성별
 
         @Builder
-        public FindRequest(String name, int age, String phone_num, String emergency_contact, String emergency_relation, int heartRate_threshold, int oxygen_threshold, int walk_threshold, double height, double weight, Sex sex) {
+        public FindRequest(String name, int age, String phoneNum, String emergency_contact, String emergency_relation, int heartRate_threshold, int oxygen_threshold, int walk_threshold, double height, double weight, Sex sex) {
             this.name = name;
             this.age = age;
-            this.phone_num = phone_num;
+            this.phoneNum = phoneNum;
             this.emergency_contact = emergency_contact;
             this.emergency_relation = emergency_relation;
             this.heartRate_threshold = heartRate_threshold;
@@ -96,7 +96,7 @@ public class UserDTO {
             return User.builder()
                     .name(this.name)
                     .age(this.age)
-                    .phone_num(this.phone_num)
+                    .phoneNum(this.phoneNum)
                     .emergency_contact(this.emergency_contact)
                     .emergency_relation(this.emergency_relation)
                     .heartRate_threshold(this.heartRate_threshold)
