@@ -110,16 +110,15 @@ public class WatchDTO {
             this.userId = userId;
             this.userName = userName;
             this.departmentName = departmentName;
-            this.uploadInterval = 1; //1분
+            this.uploadInterval = 60; //1분
         }
-
         public static StartRequest toStartRequest(Watch watch, String username) {
             return StartRequest.builder()
                     .watchId(watch.getId())
                     .userId(watch.getUser().getId())
                     .userName(username)
                     .departmentName(watch.getDepartment().getName())
-                    .uploadInterval(1)
+                    .uploadInterval(60)
                     .build();
         }
     }

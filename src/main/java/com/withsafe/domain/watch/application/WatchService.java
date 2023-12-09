@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -62,10 +61,9 @@ public class WatchService {
         watch.setIs_used(true);
         return watch.getId();
     }
-
     @Transactional
-    public StartRequest initializeWatch(@RequestParam String SerialNum) {
-        Watch watch = (Watch) watchRepository.findBySerialNum(SerialNum).orElseThrow(() -> new IllegalArgumentException("해당 시리얼넘버에 해당하는 기기가 없습니다."));
+    public StartRequest initializeWatch(@RequestParam String serialNum) {
+        Watch watch = (Watch) watchRepository.findBySerialNum(serialNum).orElseThrow(() -> new IllegalArgumentException("해당 시리얼넘버에 해당하는 기기가 없습니다."));
         String username = watch.getUser().getName();
         return StartRequest.toStartRequest(watch, username);
     }

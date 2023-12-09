@@ -1,7 +1,10 @@
 package com.withsafe.domain.watchData.domain;
 
 import com.withsafe.domain.BaseTimeEntity;
+import com.withsafe.domain.warning.dto.WarningMessageDto;
 import com.withsafe.domain.watch.domain.Watch;
+import com.withsafe.domain.watchData.dto.WatchDataDTO;
+import com.withsafe.domain.watchData.dto.WatchDataDTO.SaveRequest;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -33,5 +36,10 @@ public class WatchData extends BaseTimeEntity {
         this.battery = battery;
         this.charge = charge;
         this.watch = watch;
+    }
+
+    public void update(SaveRequest updateRequest){
+        this.battery = updateRequest.getBattery();
+        this.charge = updateRequest.getCharge();
     }
 }
