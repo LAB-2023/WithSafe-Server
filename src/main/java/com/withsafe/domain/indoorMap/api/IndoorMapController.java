@@ -14,6 +14,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.withsafe.domain.indoorMap.dto.IndoorMapDto.*;
+
 @CrossOrigin("http://localhost:3000")
 @RestController
 @RequiredArgsConstructor
@@ -36,5 +38,16 @@ public class IndoorMapController {
         SearchCondition searchCondition = SearchCondition.toSearchCondition(departmentName, indoorMapId, userName, deviceNum);
 
         return indoorMapService.getIndoorMapLocationList(searchCondition);
+    }
+
+    @GetMapping("/location-infoV2")
+    public IndoorMapLocationResponse getIndoorMapLocationInfoV2(@RequestParam String departmentName,
+                                                                             @RequestParam Long indoorMapId,
+                                                                             @RequestParam(required = false) String userName,
+                                                                             @RequestParam(required = false) Integer deviceNum){
+
+        SearchCondition searchCondition = SearchCondition.toSearchCondition(departmentName, indoorMapId, userName, deviceNum);
+
+        return indoorMapService.getIndoorMapLocationListV2(searchCondition);
     }
 }

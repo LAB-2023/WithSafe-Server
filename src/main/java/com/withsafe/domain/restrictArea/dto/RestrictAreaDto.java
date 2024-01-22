@@ -6,6 +6,7 @@ import com.withsafe.domain.outdoorMap.domain.OutdoorMap;
 import com.withsafe.domain.restrictArea.domain.RestrictArea;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.locationtech.jts.geom.Point;
 
 import javax.persistence.FetchType;
@@ -35,6 +36,21 @@ public class RestrictAreaDto {
                     .indoorMap(indoorMap)
                     .outdoorMap(outdoorMap)
                     .build();
+        }
+    }
+
+    @Getter
+    @NoArgsConstructor
+    public static class RestrictFind<T> {
+        private Long restrictAreaId;
+        private Point restrictAreaCoordinateLeft;
+        private Point restrictAreaCoordinateRight;
+
+        //@Builder
+        public RestrictFind(Long restrictAreaId, Point restrictAreaCoordinateLeft, Point restrictAreaCoordinateRight) {
+            this.restrictAreaId = restrictAreaId;
+            this.restrictAreaCoordinateLeft = restrictAreaCoordinateLeft;
+            this.restrictAreaCoordinateRight = restrictAreaCoordinateRight;
         }
     }
 }

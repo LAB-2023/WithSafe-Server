@@ -21,5 +21,4 @@ public interface IndoorMapRepository extends JpaRepository<IndoorMap,Long> {
 
 //    @Query("select i from IndoorUserLocation i where i.mapId = :mapId")
 //    List<IndoorUserLocation> findLocationByMapId(String mapId);
-
 }

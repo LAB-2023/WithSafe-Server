@@ -58,6 +58,8 @@ import static com.withsafe.domain.indoorMap.dto.IndoorMapDto.*;
         return indoorMapLocationRepository.findAllBySearchCondition(searchCondition);
     }
 
-
-
+    //해당 실내 지도의 모든 정보 반환 (위험 구역, 비콘, 사용자 위치)
+    public IndoorMapLocationResponse getIndoorMapLocationListV2(SearchCondition searchCondition){
+        return indoorMapLocationRepository.findAllIndoorMapInfo(searchCondition);
+    }
 }

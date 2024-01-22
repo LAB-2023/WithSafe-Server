@@ -31,4 +31,12 @@ public class BeaconDto {
                     .build();
         }
     }
+
+    @Getter
+    @Builder
+    public static class BeaconFind<T>{
+        private Long beaconId;
+        private Point beaconCoordinate;
+        private T indoorEntrance;
+    }
 }

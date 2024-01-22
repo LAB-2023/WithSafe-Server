@@ -1,8 +1,6 @@
 package com.withsafe.domain.watchData.api;
 
-import com.withsafe.domain.watch.dto.WatchDTO;
 import com.withsafe.domain.watchData.application.WatchDataService;
-import com.withsafe.domain.watchData.dto.WatchDataDTO;
 import com.withsafe.domain.watchData.dto.WatchDataDTO.FindRequest;
 import com.withsafe.domain.watchData.dto.WatchDataDTO.SaveRequest;
 import lombok.RequiredArgsConstructor;

@@ -27,6 +27,12 @@ public class IndoorEntranceDto {
 
     }
 
+    @Builder
+    @Getter
+    public static class IndoorEntranceResponse {
+        private Long watchId;
+    }
+
 
     //사용자에게 받은 검색 조건 저장
     @Builder

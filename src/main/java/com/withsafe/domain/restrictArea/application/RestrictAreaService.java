@@ -4,11 +4,10 @@ import com.withsafe.domain.department.dao.DepartmentRepository;
 import com.withsafe.domain.department.domain.Department;
 import com.withsafe.domain.indoorMap.dao.IndoorMapRepository;
 import com.withsafe.domain.indoorMap.domain.IndoorMap;
-import com.withsafe.domain.outdoorMap.Repository.OutdoorMapRepository;
+import com.withsafe.domain.outdoorMap.dao.OutdoorMapRepository;
 import com.withsafe.domain.outdoorMap.domain.OutdoorMap;
 import com.withsafe.domain.restrictArea.dao.RestrictAreaRepository;
 import com.withsafe.domain.restrictArea.domain.RestrictArea;
-import com.withsafe.domain.restrictArea.dto.RestrictAreaDto;
 import com.withsafe.domain.restrictArea.dto.RestrictAreaDto.SaveRequest;
 import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.geom.Coordinate;
@@ -16,8 +15,6 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

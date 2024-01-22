@@ -16,7 +16,6 @@ public class IndoorMapDto {
         private String name;
         private String imageURL;
 
-
         public static IndoorMapInfo toIndoorMapInfo(Long id, String name, String imageURL) {
             return IndoorMapInfo.builder()
                     .id(id)
@@ -27,6 +26,19 @@ public class IndoorMapDto {
     }
 
     //특정 실내 지도에 대한 디테일한 정보
+
+    /**
+     * userName, phoneNum은 당장 필요 없으니 필요할 때 가져오는게 맞음
+     */
+    @Builder
+    @Getter
+    public static class IndoorMapLocationResponse<T>{
+        private Long indoorMapId;
+        private String departmentName;
+        private T restrict;
+        private T beacon;
+    }
+
     @Builder
     @Getter
     public static class IndoorMapLocationInfo{
